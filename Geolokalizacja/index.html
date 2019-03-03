@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Geolokalizacja!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+
+        <style>
+            #gmap {
+                width: 100%;
+                height: 75vh;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Geolokalizacja</a>
+        </nav>
+
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="border border-primary rounded">
+                        <div id="gmap"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="bg-light" style="padding: 15px">
+                        <button id="localize-user-btn" class="btn btn-primary">
+
+                            <span class="text state-0">Zlokalizuj mnie</span>
+
+                            <span class="text state-1">Trwa lokalizacja</span>
+
+                            <i class="far fa-compass"></i>
+                        </button>
+
+                        <hr>
+
+                        <div class="form-group">
+                            <label for="travel-modes">Sposób podróży</label>
+                            <select id="travel-modes" class="form-control" disabled>
+                                <option value="DRIVING">Samochód</option>
+                                <option value="BICYCLING">Rower</option>
+                                <option value="TRANSIT">Transport publiczny</option>
+                                <option value="WALKING">Pieszo</option>
+                            </select>
+                        </div>
+
+                        <button id="calculate-route-btn" class="btn btn-success" disabled>Pokaż trasę</button>
+
+                        <div class="route-details">
+                            <hr>
+            
+                            <div class="list-group">
+                                <div class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div>
+                                        z <strong class="js--route-from"></strong>
+                                    </div>
+
+                                    <hr>
+
+                                    <div>
+                                        do <strong class="js--route-to"></strong>
+                                    </div>
+
+                                    <hr>
+
+                                    <p class="mb-1">dystans: <span class="js--route-distance"></span></p>
+                                    <p class="mb-1">czas podróży: <span class="js--route-duration"></span></p>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h5>Opis trasy</h5>
+
+                            <ul class="list-group js--route-steps">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsXd6MlIZ4bhtQSIIwlFwikFg08awPDdA&callback=initApp">
+        </script>
+    </body>
+</html>
+
+
+

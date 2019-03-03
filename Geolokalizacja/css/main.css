@@ -1,0 +1,42 @@
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}	
+
+#localize-user-btn .state-1 {
+	display: none;
+}
+
+#localize-user-btn.localizing .state-0 {
+	display: none;
+}
+
+#localize-user-btn.localizing .state-1 {
+	display: inline-block;
+}
+
+#localize-user-btn .far {
+	margin-left: 10px;
+}
+
+#localize-user-btn.localizing .far {
+	-webkit-animation: rotating 2s linear infinite;
+          animation: rotating 2s linear infinite;
+}
+
